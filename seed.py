@@ -13,6 +13,7 @@ def load_authors(file):
                          born_date=author.get("born_date"),
                          born_location=author.get("born_location"),
                          description=author.get("description"))
+            print(author.get("born_location"))
             aut.save()
 
 def load_quotes(file, author):
@@ -32,8 +33,8 @@ if __name__ == "__main__":
     for author in authors:
         author.delete()
 
-    file = "authors.json"
-    file2 = "qoutes.json"
+    file = "quote_spider/quote_spider/spiders/authors.json"
+    file2 = "quote_spider/quote_spider/spiders/qoutes.json"
     load_authors(file)
     authors = Author.objects()
     for author in authors:
